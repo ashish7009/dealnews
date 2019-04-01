@@ -1,99 +1,475 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+@extends('layouts.app')
+@section('content')
+<div class="banner-section">
+ <div class="container">
+    <section class="regular slider">
+       <div>
+          <img src="{{asset('assets/images/product01.webp')}}">
+          <div class="caption-part">
+             <h5>Overstock Items at Amazon: <span class="price">Up to 50% off</span>  </h5>
+          </div>
+       </div>
+       <div>
+          <img src="{{asset('assets/images/product02.webp')}}">
+          <div class="caption-part">
+             <h5>Overstock Items at Amazon: <span class="price">Up to 50% off</span>  </h5>
+          </div>
+       </div>
+       <div>
+          <img src="{{asset('assets/images/product03.webp')}}">
+          <div class="caption-part">
+             <h5>Overstock Items at Amazon: <span class="price">Up to 50% off</span>  </h5>
+          </div>
+       </div>
+       <div>
+          <img src="{{asset('assets/images/product04.webp')}}">
+          <div class="caption-part">
+             <h5>Overstock Items at Amazon: <span class="price">Up to 50% off</span>  </h5>
+          </div>
+       </div>
+       <div>
+          <img src="{{asset('assets/images/product05.webp')}}">
+          <div class="caption-part">
+             <h5>Overstock Items at Amazon: <span class="price">Up to 50% off</span>  </h5>
+          </div>
+       </div>
+       <div>
+          <img src="{{asset('assets/images/product01.webp')}}">
+          <div class="caption-part">
+             <h5>Overstock Items at Amazon: <span class="price">Up to 50% off</span>  </h5>
+          </div>
+       </div>
+    </section>
+ </div>
+</div>
+<div class="list-views">
+ <div class="container">
+    <ul class="nav nav-pills">
+       <li class="active"><a data-toggle="pill" href="#grid"><i class="fa fa-th" aria-hidden="true"></i></a></li>
+       <li><a data-toggle="pill" href="#list"><i class="fa fa-list" aria-hidden="true"></i></a></li>
+    </ul>
+ </div>
+</div>
+<section class="products">
+ <div class="container">
+    <div class="tab-content">
+       <div id="grid" class="tab-pane fade in active">
+          <div class="products-header">
+             <h4>Scraping Deals</h4>
+             <div class="select-field">
+                <select>
+                   <option value="1">Most Recent</option>
+                   <option value="2">Another option</option>
+                   <option value="3" disabled>A disabled option</option>
+                   <option value="4">Potato</option>
+                </select>
+             </div>
+          </div>
+          <div class="products-body">
+             <ul class="scraping">
+                <li>
+                   <div class="products-body-left">
+                      <img src="{{asset('assets/images/product05.webp')}}">
+                   </div>
+                   <div class="products-body-right">
+                      <h5>Plush 15-lb. Weighted Blanket</h5>
+                      <div class="rating">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                      <div class="price">
+                         <h3>$90</h3>
+                      </div>
+                      <button onClick="parent.location='product-detail.html'" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now </button>
+                      <div class="discription">
+                         A DealNews exclusive! Tanga offers this Plush 15-lb. Weighted Blanket in Grey or Blue for $99.99. Coupon code "DEALNEWS" drops it to $89.99. With free shipping, that's the lowest price we could find by $14. It's machine-washable and measures 48" x 72".
+                      </div>
+                   </div>
+                </li>
+                <li>
+                   <div class="products-body-left">
+                      <img src="{{asset('assets/images/product03.webp')}}">
+                   </div>
+                   <div class="products-body-right">
+                      <h5>Plush 15-lb. Weighted Blanket</h5>
+                      <div class="rating">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                      <div class="price">
+                         <h3>$90</h3>
+                      </div>
+                      <button onClick="parent.location='product-detail.html'" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now </button>
+                      <div class="discription">
+                         A DealNews exclusive! Tanga offers this Plush 15-lb. Weighted Blanket in Grey or Blue for $99.99. Coupon code "DEALNEWS" drops it to $89.99. With free shipping, that's the lowest price we could find by $14. It's machine-washable and measures 48" x 72".
+                      </div>
+                   </div>
+                </li>
+                <li>
+                   <div class="products-body-left">
+                      <img src="{{asset('assets/images/product01.webp')}}">
+                   </div>
+                   <div class="products-body-right">
+                      <h5>Plush 15-lb. Weighted Blanket</h5>
+                      <div class="rating">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                      <div class="price">
+                         <h3>$90</h3>
+                      </div>
+                      <button onClick="parent.location='product-detail.html'" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now </button>
+                      <div class="discription">
+                         A DealNews exclusive! Tanga offers this Plush 15-lb. Weighted Blanket in Grey or Blue for $99.99. Coupon code "DEALNEWS" drops it to $89.99. With free shipping, that's the lowest price we could find by $14. It's machine-washable and measures 48" x 72".
+                      </div>
+                   </div>
+                </li>
+                <li>
+                   <div class="products-body-left">
+                      <img src="{{asset('assets/images/product02.webp')}}">
+                   </div>
+                   <div class="products-body-right">
+                      <h5>Plush 15-lb. Weighted Blanket</h5>
+                      <div class="rating">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                      <div class="price">
+                         <h3>$90</h3>
+                      </div>
+                      <button onClick="parent.location='product-detail.html'" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now </button>
+                      <div class="discription">
+                         A DealNews exclusive! Tanga offers this Plush 15-lb. Weighted Blanket in Grey or Blue for $99.99. Coupon code "DEALNEWS" drops it to $89.99. With free shipping, that's the lowest price we could find by $14. It's machine-washable and measures 48" x 72".
+                      </div>
+                   </div>
+                </li>
+             </ul>
+          </div>
+          <div class="products-header sponsor-deals">
+             <h4>Sponsor Deals</h4>
+             <div class="select-field">
+                <select>
+                   <option value="1">Most Recent</option>
+                   <option value="2">Another option</option>
+                   <option value="3" disabled>A disabled option</option>
+                   <option value="4">Potato</option>
+                </select>
+             </div>
+          </div>
+          <div class="products-body">
+             <ul class="sponsor">
+                <li>
+                   <div class="products-body-left">
+                      <img src="{{asset('assets/images/product05.webp')}}">
+                   </div>
+                   <div class="products-body-right">
+                      <h5>Plush 15-lb. Weighted Blanket</h5>
+                      <div class="rating">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                      <div class="price">
+                         <h3>$90</h3>
+                      </div>
+                      <button onClick="parent.location='product-detail.html'" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now </button>
+                      <div class="discription">
+                         A DealNews exclusive! Tanga offers this Plush 15-lb. Weighted Blanket in Grey or Blue for $99.99. Coupon code "DEALNEWS" drops it to $89.99. With free shipping, that's the lowest price we could find by $14. It's machine-washable and measures 48" x 72".
+                      </div>
+                   </div>
+                </li>
+                <li>
+                   <div class="products-body-left">
+                      <img src="{{asset('assets/images/product03.webp')}}">
+                   </div>
+                   <div class="products-body-right">
+                      <h5>Plush 15-lb. Weighted Blanket</h5>
+                      <div class="rating">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                      <div class="price">
+                         <h3>$90</h3>
+                      </div>
+                      <button onClick="parent.location='product-detail.html'" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now </button>
+                      <div class="discription">
+                         A DealNews exclusive! Tanga offers this Plush 15-lb. Weighted Blanket in Grey or Blue for $99.99. Coupon code "DEALNEWS" drops it to $89.99. With free shipping, that's the lowest price we could find by $14. It's machine-washable and measures 48" x 72".
+                      </div>
+                   </div>
+                </li>
+                <li>
+                   <div class="products-body-left">
+                      <img src="{{asset('assets/images/product01.webp')}}">
+                   </div>
+                   <div class="products-body-right">
+                      <h5>Plush 15-lb. Weighted Blanket</h5>
+                      <div class="rating">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                      <div class="price">
+                         <h3>$90</h3>
+                      </div>
+                      <button onClick="parent.location='product-detail.html'" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now </button>
+                      <div class="discription">
+                         A DealNews exclusive! Tanga offers this Plush 15-lb. Weighted Blanket in Grey or Blue for $99.99. Coupon code "DEALNEWS" drops it to $89.99. With free shipping, that's the lowest price we could find by $14. It's machine-washable and measures 48" x 72".
+                      </div>
+                   </div>
+                </li>
+                <li>
+                   <div class="products-body-left">
+                      <img src="{{asset('assets/images/product02.webp')}}">
+                   </div>
+                   <div class="products-body-right">
+                      <h5>Plush 15-lb. Weighted Blanket</h5>
+                      <div class="rating">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                      <div class="price">
+                         <h3>$90</h3>
+                      </div>
+                      <button onClick="parent.location='product-detail.html'" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now </button>
+                      <div class="discription">
+                         A DealNews exclusive! Tanga offers this Plush 15-lb. Weighted Blanket in Grey or Blue for $99.99. Coupon code "DEALNEWS" drops it to $89.99. With free shipping, that's the lowest price we could find by $14. It's machine-washable and measures 48" x 72".
+                      </div>
+                   </div>
+                </li>
+             </ul>
+          </div>
+       </div>
+       <div id="list" class="tab-pane fade in active">
+          <div class="products-header">
+             <h4>Scraping Deals1</h4>
+             <div class="select-field">
+                <select>
+                   <option value="1">Most Recent</option>
+                   <option value="2">Another option</option>
+                   <option value="3" disabled>A disabled option</option>
+                   <option value="4">Potato</option>
+                </select>
+             </div>
+          </div>
+          <div class="products-body">
+             <ul>
+                <li>
+                   <div class="products-body-left">
+                      <img src="{{asset('assets/images/product05.webp')}}">
+                   </div>
+                   <div class="products-body-right">
+                      <h5>Plush 15-lb. Weighted Blanket</h5>
+                      <div class="rating">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                      <div class="price">
+                         <h3>$90</h3>
+                      </div>
+                      <button onClick="parent.location='product-detail.html'" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now </button>
+                      <div class="discription">
+                         A DealNews exclusive! Tanga offers this Plush 15-lb. Weighted Blanket in Grey or Blue for $99.99. Coupon code "DEALNEWS" drops it to $89.99. With free shipping, that's the lowest price we could find by $14. It's machine-washable and measures 48" x 72".
+                      </div>
+                   </div>
+                </li>
+                <li>
+                   <div class="products-body-left">
+                      <img src="{{asset('assets/images/product03.webp')}}">
+                   </div>
+                   <div class="products-body-right">
+                      <h5>Plush 15-lb. Weighted Blanket</h5>
+                      <div class="rating">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                      <div class="price">
+                         <h3>$90</h3>
+                      </div>
+                      <button onClick="parent.location='product-detail.html'" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now </button>
+                      <div class="discription">
+                         A DealNews exclusive! Tanga offers this Plush 15-lb. Weighted Blanket in Grey or Blue for $99.99. Coupon code "DEALNEWS" drops it to $89.99. With free shipping, that's the lowest price we could find by $14. It's machine-washable and measures 48" x 72".
+                      </div>
+                   </div>
+                </li>
+                <li>
+                   <div class="products-body-left">
+                      <img src="{{asset('assets/images/product01.webp')}}">
+                   </div>
+                   <div class="products-body-right">
+                      <h5>TP-Link Deco M9 Plus Smart Hub & Whole Home Mesh WiFi System</h5>
+                      <div class="rating">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                      <div class="price">
+                         <h3>$90</h3>
+                      </div>
+                      <button onClick="parent.location='product-detail.html'" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now </button>
+                      <div class="discription">
+                         A DealNews exclusive! Tanga offers this Plush 15-lb. Weighted Blanket in Grey or Blue for $99.99. Coupon code "DEALNEWS" drops it to $89.99. With free shipping, that's the lowest price we could find by $14. It's machine-washable and measures 48" x 72".
+                      </div>
+                   </div>
+                </li>
+                <li>
+                   <div class="products-body-left">
+                      <img src="{{asset('assets/images/product02.webp')}}">
+                   </div>
+                   <div class="products-body-right">
+                      <h5>Plush 15-lb. Weighted Blanket</h5>
+                      <div class="rating">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                      <div class="price">
+                         <h3>$90</h3>
+                      </div>
+                      <button onClick="parent.location='product-detail.html'" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now </button>
+                      <div class="discription">
+                         A DealNews exclusive! Tanga offers this Plush 15-lb. Weighted Blanket in Grey or Blue for $99.99. Coupon code "DEALNEWS" drops it to $89.99. With free shipping, that's the lowest price we could find by $14. It's machine-washable and measures 48" x 72".
+                      </div>
+                   </div>
+                </li>
+             </ul>
+          </div>
+          <div class="products-header sponsor-deals">
+             <h4>Sponsor Deals</h4>
+             <div class="select-field">
+                <select>
+                   <option value="1">Most Recent</option>
+                   <option value="2">Another option</option>
+                   <option value="3" disabled>A disabled option</option>
+                   <option value="4">Potato</option>
+                </select>
+             </div>
+          </div>
+          <div class="products-body">
+             <ul>
+                <li>
+                   <div class="products-body-left">
+                      <img src="{{asset('assets/images/product05.webp')}}">
+                   </div>
+                   <div class="products-body-right">
+                      <h5>Plush 15-lb. Weighted Blanket</h5>
+                      <div class="rating">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                      <div class="price">
+                         <h3>$90</h3>
+                      </div>
+                      <button onClick="parent.location='product-detail.html'" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now </button>
+                      <div class="discription">
+                         A DealNews exclusive! Tanga offers this Plush 15-lb. Weighted Blanket in Grey or Blue for $99.99. Coupon code "DEALNEWS" drops it to $89.99. With free shipping, that's the lowest price we could find by $14. It's machine-washable and measures 48" x 72".
+                      </div>
+                   </div>
+                </li>
+                <li>
+                   <div class="products-body-left">
+                      <img src="{{asset('assets/images/product03.webp')}}">
+                   </div>
+                   <div class="products-body-right">
+                      <h5>Plush 15-lb. Weighted Blanket</h5>
+                      <div class="rating">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                      <div class="price">
+                         <h3>$90</h3>
+                      </div>
+                      <button onClick="parent.location='product-detail.html'" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now </button>
+                      <div class="discription">
+                         A DealNews exclusive! Tanga offers this Plush 15-lb. Weighted Blanket in Grey or Blue for $99.99. Coupon code "DEALNEWS" drops it to $89.99. With free shipping, that's the lowest price we could find by $14. It's machine-washable and measures 48" x 72".
+                      </div>
+                   </div>
+                </li>
+                <li>
+                   <div class="products-body-left">
+                      <img src="{{asset('assets/images/product01.webp')}}">
+                   </div>
+                   <div class="products-body-right">
+                      <h5>Plush 15-lb. Weighted Blanket</h5>
+                      <div class="rating">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                      <div class="price">
+                         <h3>$90</h3>
+                      </div>
+                      <button onClick="parent.location='product-detail.html'" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now </button>
+                      <div class="discription">
+                         A DealNews exclusive! Tanga offers this Plush 15-lb. Weighted Blanket in Grey or Blue for $99.99. Coupon code "DEALNEWS" drops it to $89.99. With free shipping, that's the lowest price we could find by $14. It's machine-washable and measures 48" x 72".
+                      </div>
+                   </div>
+                </li>
+                <li>
+                   <div class="products-body-left">
+                      <img src="{{asset('assets/images/product02.webp')}}">
+                   </div>
+                   <div class="products-body-right">
+                      <h5>Plush 15-lb. Weighted Blanket</h5>
+                      <div class="rating">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                      <div class="price">
+                         <h3>$90</h3>
+                      </div>
+                      <button onClick="parent.location='product-detail.html'" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy Now </button>
+                      <div class="discription">
+                         A DealNews exclusive! Tanga offers this Plush 15-lb. Weighted Blanket in Grey or Blue for $99.99. Coupon code "DEALNEWS" drops it to $89.99. With free shipping, that's the lowest price we could find by $14. It's machine-washable and measures 48" x 72".
+                      </div>
+                   </div>
+                </li>
+             </ul>
+          </div>
+       </div>
+    </div>
+</div>
+</div></section>
+@endsection
